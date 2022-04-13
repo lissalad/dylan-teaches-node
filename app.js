@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const { engine } = require('express-handlebars');
 const fetch = require('node-fetch');
+
 require('dotenv').config();
 
+app.use(express.static('public'));
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 
